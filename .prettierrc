@@ -1,0 +1,24 @@
+{
+  "endOfLine": "auto",
+  "trailingComma": "none",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": false,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "singleAttributePerLine": true,
+  "bracketSameLine": false,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "importOrder": [
+    "^solid-js(.*)$",
+    "^@solidjs(.*)$",
+    "^~/(.*)$",
+    "^[./]",
+    "^[../]"
+  ],
+  "importOrderSeparation": false
+}
