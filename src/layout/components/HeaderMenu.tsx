@@ -3,6 +3,7 @@ import { type Component } from 'solid-js'
 import { useToggle } from '~/hooks/useToggle'
 import { Hamburger } from './Hamburger'
 import { NavLinks } from './NavLinks'
+import { SocialIcons } from './SocialIcons'
 
 export const HeaderMenu: Component = () => {
   const { isOn, toggle, setOff } = useToggle()
@@ -16,7 +17,7 @@ export const HeaderMenu: Component = () => {
         )}
       >
         <NavLinks onNavLinkClick={() => setOff()} />
-        {/* <SocialIcons iconClass="hover:text-secondary-400" /> */}
+        <SocialIcons />
       </div>
       <Hamburger
         isOpen={isOn()}
