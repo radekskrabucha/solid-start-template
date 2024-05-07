@@ -12,3 +12,8 @@ export const ExternalLink = {
 } as const
 
 export const AppName = 'SolidStart App Template'
+
+export const defaultSeoTags = {
+  description: 'SolidStart Template app to quickly bootstrap your application.',
+  siteUrl: import.meta.env.VITE_APP_BASE_URL
+}
