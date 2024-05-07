@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js'
-import { A } from '@solidjs/router'
+import { Link } from '~/components/Link'
 import { AppName, ExternalLink, InternalLink } from '~/config/app'
 import { getCurrentYear } from '~/utils/date'
 
@@ -8,12 +8,12 @@ export const Footer: Component = () => (
     <div class="layout-section">
       <div class="flex flex-wrap items-center justify-between gap-3 pb-4">
         <div class="flex flex-wrap items-center gap-2">
-          <A
+          <Link
             class="text-4xl"
             href={InternalLink.home}
           >
             😎
-          </A>
+          </Link>
           <div>
             <h3 class="font-main text-lg">{AppName}</h3>
             <p class="font-secondary text-sm text-white/50 max-sm:max-w-none">
@@ -23,15 +23,11 @@ export const Footer: Component = () => (
         </div>
         <div class="flex flex-col items-end gap-2 max-sm:items-start">
           {/* <SocialIcons /> */}
-          <A
-            href={ExternalLink.email}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href={ExternalLink.email}>
             <p class="font-secondary text-right text-sm text-white/50 transition-colors duration-150 hover:text-white/75 max-sm:text-left">
               {import.meta.env.VITE_EMAIL}
             </p>
-          </A>
+          </Link>
         </div>
       </div>
       <div class="border-t border-white/10 pt-4">
