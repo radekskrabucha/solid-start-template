@@ -1,5 +1,6 @@
 import { Suspense, type Component, type JSXElement } from 'solid-js'
-import { MetaProvider, Title } from '@solidjs/meta'
+import { MetaProvider } from '@solidjs/meta'
+import { SEO } from '~/components/Seo'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 
@@ -9,7 +10,7 @@ type MainLayoutProps = {
 
 export const MainLayout: Component<MainLayoutProps> = props => (
   <MetaProvider>
-    <Title>My website bla bla bla</Title>
+    <SEO title={undefined} />
     <Header />
     <main class="layout-container flex-1">
       <Suspense>{props.children}</Suspense>

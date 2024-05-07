@@ -1,10 +1,7 @@
-import { Title } from '@solidjs/meta'
-
-export default function Home() {
+export default function About() {
   return (
-    <main>
-      <Title>About</Title>
+    <section class="layout-section">
       <h1>About</h1>
-    </main>
+    </section>
   )
 }
