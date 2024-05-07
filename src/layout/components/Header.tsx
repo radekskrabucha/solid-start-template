@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js'
 import { Link } from '~/components/Link'
 import { InternalLink } from '~/config/app'
+import { HeaderMenu } from './HeaderMenu'
 
 export const Header: Component = () => (
   <header class="layout-container bg-background sticky top-0 border-b border-white/10">
@@ -12,7 +13,7 @@ export const Header: Component = () => (
         >
           😎
         </Link>
-        {/* <HeaderMenu /> */}
+        <HeaderMenu />
       </nav>
     </div>
   </header>
