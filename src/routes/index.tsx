@@ -1,10 +1,8 @@
-import { Title } from '@solidjs/meta'
 import Counter from '~/components/Counter'
 
 export default function Home() {
   return (
-    <main>
-      <Title>Hello World</Title>
+    <section class="layout-section">
       <h1>Hello world!</h1>
       <Counter />
       <p>
@@ -17,6 +15,6 @@ export default function Home() {
         </a>{' '}
         to learn how to build SolidStart apps.
       </p>
-    </main>
+    </section>
   )
 }

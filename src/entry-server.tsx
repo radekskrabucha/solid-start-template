@@ -17,8 +17,11 @@ export default createHandler(() => (
           />
           {assets}
         </head>
-        <body>
-          <div id="app">{children}</div>
+        <body
+          id="app"
+          class="relative flex h-screen w-full flex-col items-center overflow-x-hidden"
+        >
+          {children}
           {scripts}
         </body>
       </html>
