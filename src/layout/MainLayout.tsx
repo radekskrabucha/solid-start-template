@@ -12,7 +12,7 @@ export const MainLayout: Component<MainLayoutProps> = props => (
   <MetaProvider>
     <SEO title={undefined} />
     <Header />
-    <main class="layout-container flex-1">
+    <main class="layout-container flex-1 bg-white">
       <Suspense>{props.children}</Suspense>
     </main>
     <Footer />

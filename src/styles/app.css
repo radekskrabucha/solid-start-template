@@ -11,22 +11,10 @@
 
   --color-primary: #fdc244;
   --color-secondary: #447ffd;
-  --color-background: #ebf6fc;
+  --color-background: #000;
   --color-success: #25fa61;
   --color-error: #e0221b;
   --color-warning: #ffcc00;
-
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  --color-gray-950: #030712;
 }
 
 @layer utilities {
