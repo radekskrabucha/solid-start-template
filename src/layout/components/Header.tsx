@@ -1,11 +1,19 @@
 import type { Component } from 'solid-js'
+import { A } from '@solidjs/router'
+import { InternalLink } from '~/config/app'
 
 export const Header: Component = () => (
-  <header class="layout-container">
+  <header class="layout-container bg-background sticky top-0 border-b border-gray-300">
     <div class="layout-section">
-      <h2>Header</h2>
-      <a href="/">Index</a>
-      <a href="/about">About</a>
+      <nav class="flex items-center gap-4">
+        <A
+          class="z-[1001] text-4xl"
+          href={InternalLink.home}
+        >
+          🥑
+        </A>
+        {/* <HeaderMenu /> */}
+      </nav>
     </div>
   </header>
 )
