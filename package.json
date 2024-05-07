@@ -7,7 +7,8 @@
     "start": "vinxi start",
     "version": "vinxi version",
     "format": "yarn prettier . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commit": "cz"
   },
   "dependencies": {
     "@solidjs/meta": "0.29.3",
@@ -17,8 +18,12 @@
     "vinxi": "0.3.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
     "@julr/vite-plugin-validate-env": "1.1.1",
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
@@ -29,5 +34,10 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
