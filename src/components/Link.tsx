@@ -41,6 +41,7 @@ type InternalLinkProps = {
   | 'noScroll'
   | 'state'
   | 'end'
+  | 'aria-label'
 >
 
 type ExternalLinkProps = {
@@ -56,6 +57,7 @@ type ExternalLinkProps = {
   | 'href'
   | 'target'
   | 'rel'
+  | 'aria-label'
 >
 
 type SpanProps = {
@@ -69,4 +71,5 @@ type SpanProps = {
   | 'children'
   | 'id'
   | 'href'
+  | 'aria-label'
 >

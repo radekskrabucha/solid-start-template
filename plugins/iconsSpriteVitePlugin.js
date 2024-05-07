@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 
-export function IconSpritePlugin() {
+export default function IconSpritePlugin() {
   async function generateIconSprite() {
     // Read the SVG files in the public/icons folder
     const iconsDir = path.join(process.cwd(), 'public', 'icons')

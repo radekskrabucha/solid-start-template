@@ -2,6 +2,7 @@ import type { Component } from 'solid-js'
 import { Link } from '~/components/Link'
 import { AppName, ExternalLink, InternalLink } from '~/config/app'
 import { getCurrentYear } from '~/utils/date'
+import { SocialIcons } from './SocialIcons'
 
 export const Footer: Component = () => (
   <footer class="layout-container bg-background border-t border-white/10 text-white">
@@ -22,7 +23,7 @@ export const Footer: Component = () => (
           </div>
         </div>
         <div class="flex flex-col items-end gap-2 max-sm:items-start">
-          {/* <SocialIcons /> */}
+          <SocialIcons />
           <Link href={ExternalLink.email}>
             <p class="font-secondary text-right text-sm text-white/50 transition-colors duration-150 hover:text-white/75 max-sm:text-left">
               {import.meta.env.VITE_EMAIL}
