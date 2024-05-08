@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js'
 import { Link } from '~/components/Link'
-import { AppName, ExternalLink, InternalLink } from '~/config/app'
+import { AppName, ExternalLink, InternalLink, ownerEmail } from '~/config/app'
 import { getCurrentYear } from '~/utils/date'
 import { SocialIcons } from './SocialIcons'
 
@@ -26,7 +26,7 @@ export const Footer: Component = () => (
           <SocialIcons />
           <Link href={ExternalLink.email}>
             <p class="font-secondary text-right text-sm text-white/50 transition-colors duration-150 hover:text-white/75 max-sm:text-left">
-              {import.meta.env.VITE_EMAIL}
+              {ownerEmail}
             </p>
           </Link>
         </div>

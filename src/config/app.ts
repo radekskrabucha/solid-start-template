@@ -3,12 +3,16 @@ export const InternalLink = {
   about: '/about'
 } as const
 
+export const ownerEmail = 'rskrabucha13@gmail.com'
+
 export const ExternalLink = {
-  github: import.meta.env.VITE_GITHUB_URL,
-  linkedin: import.meta.env.VITE_LINKEDIN_URL,
-  twitter: import.meta.env.VITE_TWITTER_URL,
-  email: `mailto:${import.meta.env.VITE_EMAIL}`,
-  sourceCode: 'https://github.com/radekskrabucha/solid-start-template'
+  github: 'https://github.com/radekskrabucha',
+  linkedin: 'https://www.linkedin.com/in/radoslaw-skrabucha',
+  twitter: 'https://twitter.com/radek_1313',
+  email: `mailto:${ownerEmail}`,
+  sourceCode: 'https://github.com/radekskrabucha/solid-start-template',
+  solidJsSourceCode: 'https://github.com/solidjs/solid',
+  solidJsDocs: 'https://docs.solidjs.com'
 } as const
 
 export const AppName = 'SolidStart App Template'

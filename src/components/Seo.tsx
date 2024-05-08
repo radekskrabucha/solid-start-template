@@ -10,40 +10,17 @@ type SeoProps = {
   siteUrl?: string
 }
 
-const getTitle = (title?: string) => (title ? `${title} | ${AppName}` : AppName)
-
 export const SEO: Component<SeoProps> = props => (
   <>
     <Show
       when={props.title}
       fallback={<Title>{getTitle()}</Title>}
     >
-      <>
-        <Title>{getTitle(props.title)}</Title>
-        <Meta
-          name="twitter:title"
-          content={getTitle(props.title)}
-        />
-        <Meta
-          name="og:title"
-          content={getTitle(props.title)}
-        />
-      </>
+      <SEOTitle title={getTitle(props.title)} />
     </Show>
 
     <Show when={props.description}>
-      <Meta
-        name="description"
-        content={props.description}
-      />
-      <Meta
-        name="twitter:description"
-        content={props.description}
-      />
-      <Meta
-        name="og:description"
-        content={props.description}
-      />
+      <SEODescription description={props.description as string} />
     </Show>
 
     <Show when={props.imageUrl}>
@@ -73,3 +50,42 @@ export const SEO: Component<SeoProps> = props => (
     </Show>
   </>
 )
+
+type SEOTitleProps = {
+  title?: string
+}
+export const SEOTitle: Component<SEOTitleProps> = props => (
+  <>
+    <Title>{getTitle(props.title)}</Title>
+    <Meta
+      name="twitter:title"
+      content={getTitle(props.title)}
+    />
+    <Meta
+      name="og:title"
+      content={getTitle(props.title)}
+    />
+  </>
+)
+
+type SEODescriptionProps = {
+  description: string
+}
+export const SEODescription: Component<SEODescriptionProps> = props => (
+  <>
+    <Meta
+      name="description"
+      content={props.description}
+    />
+    <Meta
+      name="twitter:description"
+      content={props.description}
+    />
+    <Meta
+      name="og:description"
+      content={props.description}
+    />
+  </>
+)
+
+const getTitle = (title?: string) => (title ? `${title} | ${AppName}` : AppName)

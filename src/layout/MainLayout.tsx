@@ -1,7 +1,13 @@
-import { Suspense, type Component, type JSXElement } from 'solid-js'
+import {
+  ErrorBoundary,
+  Suspense,
+  type Component,
+  type JSXElement
+} from 'solid-js'
 import { MetaProvider } from '@solidjs/meta'
 import { SEO } from '~/components/Seo'
 import { defaultSeoTags } from '~/config/app'
+import { ErrorBoundary as ErrorBoundaryFallback } from './components/ErrorBoundary'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 
@@ -19,7 +25,18 @@ export const MainLayout: Component<MainLayoutProps> = props => (
     />
     <Header />
     <main class="layout-container flex-1 bg-white">
-      <Suspense>{props.children}</Suspense>
+      <Suspense>
+        <ErrorBoundary
+          fallback={(error, onReset) => (
+            <ErrorBoundaryFallback
+              error={error}
+              onReset={onReset}
+            />
+          )}
+        >
+          {props.children}
+        </ErrorBoundary>
+      </Suspense>
     </main>
     <Footer />
   </MetaProvider>

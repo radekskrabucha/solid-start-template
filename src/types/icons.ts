@@ -1,4 +1,1 @@
-export type IconId =
-  | 'github' 
-  | 'linkedin' 
-  | 'twitter' 
+export type IconId = 'github' | 'linkedin' | 'twitter'
