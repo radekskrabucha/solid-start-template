@@ -1,5 +1,4 @@
-import { Match, Switch, type Component } from 'solid-js'
-import type { JSX } from 'solid-js/jsx-runtime'
+import { type JSX, Match, Switch, type Component } from 'solid-js'
 import { A, type AnchorProps } from '@solidjs/router'
 import { isExternalLink } from '~/utils/regexes'
 
