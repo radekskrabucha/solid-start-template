@@ -1,6 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type Component } from 'solid-js'
-import type { JSX } from 'solid-js/jsx-runtime'
+import { type JSX, type Component } from 'solid-js'
 import { cn } from '~/utils/styles'
 
 type ButtonElementProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>
