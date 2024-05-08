@@ -1,4 +1,5 @@
 import type { Component } from 'solid-js'
+import { Button, buttonVariants } from '~/components/Button'
 import { Link } from '~/components/Link'
 import { InternalLink } from '~/config/app'
 
@@ -8,14 +9,26 @@ type ErrorBoundaryProps = {
 }
 
 export const ErrorBoundary: Component<ErrorBoundaryProps> = props => (
-  <section class="layout-section items-center gap-6 text-center">
+  <section class="layout-section flex-1 items-center justify-center gap-6 text-center">
     <h1 class="text-3xl font-bold">Uh oh, something went sideways! ⚠️</h1>
     <p class="text-lg">
       It appears an unexpected error has occurred. Don't worry, our engineers
       are already on it. ️
     </p>
-    <button onClick={props.onReset}>Try Again</button>
-    <Link href={InternalLink.home}>Go Back to Homepage</Link>
-    <pre class="mt-6 text-xs">{props.error.message}</pre>
+    <div class="flex max-w-48 flex-col gap-4">
+      <Button
+        variant="primary"
+        onClick={props.onReset}
+      >
+        Try again
+      </Button>
+      <Link
+        class={buttonVariants({ variant: 'outline' })}
+        href={InternalLink.home}
+      >
+        Go back to homepage
+      </Link>
+    </div>
+    <pre class="mt-6 text-xs text-current/50">{props.error.message}</pre>
   </section>
 )
