@@ -22,7 +22,7 @@ export default function IconSpritePlugin() {
         ) // Change <svg> to <symbol>
         .replace('</svg>', '</symbol>')
       symbols += svgContent + '\n'
-      idTypes += `  | '${id}'\n`
+      idTypes += `  | '${id}' \n`
     }
 
     // Write the SVG sprite to a file in the public folder

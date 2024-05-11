@@ -1,37 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --default-font-family: var(--font-family-secondary);
-  --default-font-feature-settings: var(--font-family-secondary--font-feature-settings);
-  --default-font-variation-settings: var(--font-family-secondary--font-variation-settings);
-  --font-family-main: "Jost", sans-serif;
-  --font-family-secondary: "Poppins", sans-serif;
+  --font-family-main: "Montserrat", sans-serif;
+  --font-family-secondary: "Barlow", sans-serif;
 
   --color-*: initial;
+
   --color-black: #000;
   --color-white: #fff;
-  --color-primary: #C5A47E;
-  --color-background: #212121;
-  --color-background-light: #272727;
-  --color-background-dark: #151515;
-  --color-light-gray: #9B9B9B;
-  --color-success: #2D9721;
-  --color-error: #FF4646;
+
+  --color-primary: #fdc244;
+  --color-secondary: #447ffd;
+  --color-background: #000;
+  --color-success: #25fa61;
+  --color-error: #e0221b;
   --color-warning: #ffcc00;
-
-  --font-size-xs: 0.625rem; /* 10px */
-  --font-size-sm: 0.875rem; /* 14px */ 
-  --font-size-base: 1rem; /* 16px */ 
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.5rem; /* 24px */
-  --font-size-2xl: 1.875rem; /* 30px */
-  --font-size-3xl: 2.25rem; /* 36px */
-  --font-size-4xl: 2.625rem; /* 42px */
-  --font-size-5xl: 3.5rem; /* 56px */
-  --font-size-6xl: 4rem; /* 64px */
-
-  --breakpoint-xxs: 22rem; /* 320px */
-  --breakpoint-xs: 32rem; /* 480px */
 }
 
 @layer utilities {
@@ -39,67 +22,6 @@
     @apply flex w-screen max-w-full flex-col
   }
   .layout-section {
-    @apply flex w-full max-w-[1920px] flex-col self-center px-24 py-16 max-lg:px-12 max-md:px-6
-  }
-  .dotted-bg {
-    background-image: radial-gradient(rgba(255,255,255,0.3) 10%, transparent 10%);
-    background-size: 8px 8px;
-    background-position: 0 0, 4px 4px;
-    background-repeat: repeat;
-  }
-  .animate-show {
-    animation: show 350ms 50ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
-    opacity: 0;
+    @apply flex w-full max-w-[1520px] flex-col self-center px-10 py-6 max-md:p-4
   }
 }
-
-@keyframes show {
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Toast animations */
-.toast[data-opened] {
-  animation: slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.toast[data-closed] {
-  animation: hide 100ms ease-in;
-}
-.toast[data-swipe="move"] {
-  transform: translateX(var(--kb-toast-swipe-move-x));
-}
-.toast[data-swipe="cancel"] {
-  transform: translateX(0);
-  transition: transform 200ms ease-out;
-}
-.toast[data-swipe="end"] {
-  animation: swipeOut 100ms ease-out;
-}
-
-@keyframes hide {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes slideIn {
-  from {
-    transform: translateX(calc(100% + var(--spacing-4)));
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes swipeOut {
-  from {
-    transform: translateX(var(--kb-toast-swipe-end-x));
-  }
-  to {
-    transform: translateX(calc(100% + var(--spacing-4)));
-  }
-}
-/* Toast animations end */

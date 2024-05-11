@@ -1,6 +1,6 @@
 import { ValidateEnv } from '@julr/vite-plugin-validate-env'
-import { defineConfig } from '@solidjs/start/config'
 import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from '@solidjs/start/config'
 import IconSpritePlugin from './plugins/iconsSpriteVitePlugin.js'
 
 export default defineConfig({

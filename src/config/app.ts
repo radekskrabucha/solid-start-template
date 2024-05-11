@@ -1,28 +1,23 @@
 export const InternalLink = {
   home: '/',
-  about: '/o-nas',
-  portfolio: '/portfolio',
-  offer: '/oferta',
-  contact: '/kontakt'
+  about: '/about'
 } as const
 
-export const ownerEmail = 'biuro@kaes-architekci.pl'
-export const ownerPhoneNumber = '669 832 784'
-export const ownerPhoneNumberPrefix = '+48'
+export const ownerEmail = 'rskrabucha13@gmail.com'
 
 export const ExternalLink = {
+  github: 'https://github.com/radekskrabucha',
+  linkedin: 'https://www.linkedin.com/in/radoslaw-skrabucha',
+  twitter: 'https://twitter.com/radek_1313',
   email: `mailto:${ownerEmail}`,
-  phoneNumber: `tel:${ownerPhoneNumberPrefix} ${ownerPhoneNumber}`,
-  facebook: 'https://www.facebook.com/KaeSarchitekci',
-  instagram: 'https://www.instagram.com/kaes_architekci',
-  tiktok: 'https://www.tiktok.com/@kaes.architekci'
+  sourceCode: 'https://github.com/radekskrabucha/solid-start-template',
+  solidJsSourceCode: 'https://github.com/solidjs/solid',
+  solidJsDocs: 'https://docs.solidjs.com'
 } as const
 
-export const AppName = 'KaeS'
-export const AppNameFull = 'KaeS Architekci'
+export const AppName = 'SolidStart App Template'
 
 export const defaultSeoTags = {
-  description:
-    'Kaes Architekci – kreatywna pracownia architektoniczna opracowująca projekty prywatne i komercyjne z branży architektury i wnętrz.',
+  description: 'SolidStart Template app to quickly bootstrap your application.',
   siteUrl: import.meta.env.VITE_APP_BASE_URL
 }

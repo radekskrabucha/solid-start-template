@@ -12,7 +12,8 @@ export const NavLink: Component<NavLinkProps> = props => (
     <Link
       onClick={props.onClick}
       href={props.href}
-      class="font-secondary hover:text-primary text-white/75 transition-colors duration-150"
+      class="font-secondary text-lg text-white/50 transition-colors duration-150 hover:text-white max-md:text-base"
+      activeClass="text-primary"
     >
       <p>{props.text}</p>
     </Link>
