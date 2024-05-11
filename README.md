@@ -1,6 +1,6 @@
-# SolidStart App Template
+# KaeS Architekci landing page
 
-This is a starter template for SolidStart projects. It includes a basic layout and a few other features to get you started.
+This is a landing page for KaeS Architekci.
 
 ## Features
 
@@ -17,7 +17,7 @@ To get started with this template, follow these steps:
 1. **Clone the repository**: Use the following command to clone the repository:
 
 ```bash
-git clone git@github.com:radekskrabucha/solid-start-template.git
+git clone git@github.com:KaeS-Architects/landing-page-v2.git
 ```
 
 2. **Install dependencies**: Navigate to the project directory and run the following command to install the dependencies:
@@ -26,7 +26,13 @@ git clone git@github.com:radekskrabucha/solid-start-template.git
 npm install
 ```
 
-3. **Start the development server**: Run the following command to start the development server:
+3. **Copy env file**: Copy the `.env.example` file to `.env` and fill in the values.
+
+```bash
+cp .env.example .env
+```
+
+4. **Start the development server**: Run the following command to start the development server:
 
 ```bash
 npm run dev
@@ -43,19 +49,3 @@ This template comes with a few useful scripts that can help you manage your Soli
 - `npm run start`: Starts the production server.
 - `npm run format`: Formats your code using Prettier.
 - `npm run commit`: Runs the commitlint tool to check for any errors or warnings.
-
-## Deployment
-
-Visit the [SolidStart documentation](https://docs.solidjs.com/guides/deploying-your-app#deploying-your-app) for more information on how to deploy your SolidStart App Template.
-
-## Contributing
-
-If you have any questions or suggestions for this template, feel free to open an issue or submit a pull request. I'm always happy to help improve this template and make it even better for your SolidJS projects.
-
-## License
-
-This template is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-## Contact
-
-If you have any questions or suggestions, feel free to reach out to me at [rskrabucha13@gmail.com](mailto:rskrabucha13@gmail.com). I'm always happy to help improve this template and make it even better for your SolidJS projects. Thank you for using SolidStart App Template!

@@ -1,1 +1,12 @@
-export type IconId = 'github' | 'linkedin' | 'twitter'
+export type IconId =
+  | 'architecture-plan'
+  | 'arrow'
+  | 'close'
+  | 'facebook'
+  | 'home'
+  | 'instagram'
+  | 'interior'
+  | 'mail'
+  | 'not-found'
+  | 'phone'
+  | 'tiktok'

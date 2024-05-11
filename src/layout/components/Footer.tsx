@@ -1,39 +1,61 @@
 import type { Component } from 'solid-js'
+import { ContactItem } from '~/components/ContactItem'
+import { Icon } from '~/components/Icon'
+import { Image } from '~/components/Image'
 import { Link } from '~/components/Link'
-import { AppName, ExternalLink, InternalLink, ownerEmail } from '~/config/app'
+import { SocialIcons } from '~/components/SocialIcons'
+import {
+  AppNameFull,
+  ExternalLink,
+  InternalLink,
+  ownerEmail,
+  ownerPhoneNumber
+} from '~/config/app'
 import { getCurrentYear } from '~/utils/date'
-import { SocialIcons } from './SocialIcons'
 
 export const Footer: Component = () => (
   <footer class="layout-container bg-background border-t border-white/10 text-white">
-    <div class="layout-section">
-      <div class="flex flex-wrap items-center justify-between gap-3 pb-4">
-        <div class="flex flex-wrap items-center gap-2">
-          <Link
-            class="text-4xl"
-            href={InternalLink.home}
-          >
-            😎
-          </Link>
-          <div>
-            <h3 class="font-main text-lg">{AppName}</h3>
-            <p class="font-secondary text-sm text-white/50 max-sm:max-w-none">
-              A starter for SolidStart with TypeScript and Tailwind CSS.
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-col items-end gap-2 max-sm:items-start">
-          <SocialIcons />
-          <Link href={ExternalLink.email}>
-            <p class="font-secondary text-right text-sm text-white/50 transition-colors duration-150 hover:text-white/75 max-sm:text-left">
-              {ownerEmail}
-            </p>
-          </Link>
-        </div>
+    <div class="layout-section !flex-row flex-wrap justify-between gap-x-12 gap-y-8">
+      <div class="flex flex-col gap-6">
+        <h3 class="font-main text-3xl font-bold capitalize max-md:text-2xl">
+          kontakt
+        </h3>
+        <ContactItem
+          label="E-mail"
+          href={ExternalLink.email}
+          hrefLabel={ownerEmail}
+        >
+          <Icon
+            id="mail"
+            class="h-5 w-5 stroke-current"
+          />
+        </ContactItem>
+        <ContactItem
+          label="Telefon"
+          href={ExternalLink.phoneNumber}
+          hrefLabel={ownerPhoneNumber}
+        >
+          <Icon
+            id="phone"
+            class="h-5 w-5 fill-current"
+          />
+        </ContactItem>
       </div>
-      <div class="border-t border-white/10 pt-4">
-        <p class="text-sm text-white/20">
-          © {getCurrentYear()} Radek Skrabucha
+
+      <div class="flex flex-col gap-6">
+        <Link
+          href={InternalLink.home}
+          aria-label="Home"
+        >
+          <Image
+            src="images/shared/logo-kaes.webp"
+            width={220}
+            alt="KaeS"
+          />
+        </Link>
+        <SocialIcons />
+        <p class="text-sm tracking-wider text-white/50 sm:max-w-56">
+          © {AppNameFull} {getCurrentYear()}. Wszelkie prawa zastrzeżone.
         </p>
       </div>
     </div>

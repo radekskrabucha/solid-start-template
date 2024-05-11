@@ -2,18 +2,23 @@
   "name": "solid-start-template",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vinxi dev --force",
     "build": "vinxi build",
     "start": "vinxi start",
-    "format": "yarn prettier . --write",
+    "format": "prettier . --write",
     "commit": "cz",
     "prepare": "husky"
   },
   "dependencies": {
+    "@kobalte/core": "0.13.1",
+    "@modular-forms/solid": "0.20.0",
     "@solidjs/meta": "0.29.3",
     "@solidjs/router": "0.13.3",
     "@solidjs/start": "1.0.0-rc.1",
+    "@tanstack/solid-query": "5.35.5",
+    "axios": "1.6.8",
     "class-variance-authority": "0.7.0",
+    "contentful": "10.10.0",
     "solid-js": "1.8.17",
     "tailwind-merge": "2.3.0",
     "vinxi": "0.3.11"

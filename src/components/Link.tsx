@@ -1,5 +1,5 @@
-import { type JSX, Match, Switch, type Component } from 'solid-js'
 import { A, type AnchorProps } from '@solidjs/router'
+import { type JSX, Match, Switch, type Component } from 'solid-js'
 import { isExternalLink } from '~/utils/regexes'
 
 type LinkProps = InternalLinkProps | ExternalLinkProps | SpanProps
@@ -13,7 +13,6 @@ export const Link: Component<LinkProps> = props => (
       />
     </Match>
     <Match when={props.href && isExternalLink(props.href)}>
-      {/* @ts-ignore */}
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -25,6 +24,7 @@ export const Link: Component<LinkProps> = props => (
 
 type InternalLinkProps = {
   disabled?: false
+  href: undefined
 } & Pick<
   AnchorProps,
   | 'class'
@@ -45,6 +45,7 @@ type InternalLinkProps = {
 
 type ExternalLinkProps = {
   disabled?: false
+  href: string
 } & Pick<
   JSX.AnchorHTMLAttributes<HTMLAnchorElement>,
   | 'class'
@@ -53,7 +54,6 @@ type ExternalLinkProps = {
   | 'onTouchStart'
   | 'children'
   | 'id'
-  | 'href'
   | 'target'
   | 'rel'
   | 'aria-label'
@@ -61,6 +61,7 @@ type ExternalLinkProps = {
 
 type SpanProps = {
   disabled?: true
+  href: string
 } & Pick<
   JSX.AnchorHTMLAttributes<HTMLSpanElement>,
   | 'class'
@@ -69,6 +70,5 @@ type SpanProps = {
   | 'onTouchStart'
   | 'children'
   | 'id'
-  | 'href'
   | 'aria-label'
 >
