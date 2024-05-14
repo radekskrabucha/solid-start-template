@@ -4,6 +4,7 @@ import { Button } from '~/components/Button'
 import { LoaderCircle } from '~/components/LoaderCircle'
 import { TextAreaInput } from '~/components/TextAreaInput'
 import { TextInput } from '~/components/TextInput'
+import { toast } from '~/components/Toast'
 import { postContactMessage } from '../actions'
 import {
   Form,
@@ -20,6 +21,20 @@ export const ContactForm = () => {
     mutationKey: ['postContactMessage'],
     onSuccess: (_, variables) => {
       reset(form)
+      toast.show({
+        title: 'Message sent',
+        description: `Your message has been sent successfully. Soon we will reach out to you ${variables.name}. 🫡`,
+        variant: 'success',
+        priority: 'high'
+      })
+    },
+    onError: (_, variables) => {
+      toast.show({
+        title: 'Oops! Something went wrong 🤓',
+        description: `Something went wrong while sending your message, but don't worry, we'll get back to you ${variables.name}. Try again later or contact us in another way.`,
+        variant: 'error',
+        priority: 'high'
+      })
     }
   }))
 
