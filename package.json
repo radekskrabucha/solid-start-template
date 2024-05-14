@@ -5,7 +5,7 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "format": "yarn prettier . --write",
+    "format": "prettier . --write",
     "commit": "cz",
     "prepare": "husky"
   },
