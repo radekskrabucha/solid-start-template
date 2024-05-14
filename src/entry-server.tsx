@@ -33,7 +33,7 @@ export default createHandler(() => (
         </head>
         <body
           id="app"
-          class="bg-background relative flex h-screen w-full flex-col items-center overflow-x-hidden"
+          class="bg-background relative flex min-h-dvh w-full flex-col items-center overflow-x-hidden"
         >
           {children}
           {scripts}
