@@ -6,9 +6,14 @@ This is a starter template for SolidStart projects. It includes a basic layout a
 
 - **SolidStart**: A framework for building SolidJS applications.
 - **TypeScript**: A typed superset of JavaScript that adds optional static typing.
-- **Tailwind CSS**: A utility-first CSS framework that provides a simple and efficient way to style your web pages.
+- **Tailwind CSS v4**: A utility-first CSS framework that provides a simple and efficient way to style your web pages.
 - **Commitlint**: A tool for enforcing conventional commit messages.
 - **Prettier**: A code formatter that enforces a consistent style across your codebase.
+- **Tanstack SolidQuery**: A library for managing and querying data in SolidJS applications.
+- **Sprite Icons**: Automatically generate icon-sprite.svg from SVG files.
+- **Kobalte**: A UI toolkit for building accessible web apps and design systems with SolidJS.
+- **Modular Forms**: A library for building forms in SolidJS applications.
+- **Env Validation**: Validating environment variables with the help of the `@julr/vite-plugin-validate-env` plugin.
 
 ## Getting Started
 
