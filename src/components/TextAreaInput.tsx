@@ -55,11 +55,11 @@ export const TextAreaInput: Component<TextAreaInputProps> = props => (
       autoResize={props.autoResize}
       submitOnEnter={props.submitOnEnter}
       autofocus={props.autofocus}
-      class="peer data-[invalid]:!border-b-error font-secondary order-3 !border-b border-transparent !border-b-white/50 bg-transparent py-2 outline-none transition-colors focus:!border-b-white disabled:cursor-not-allowed disabled:opacity-50"
+      class="peer data-[invalid]:!border-b-error font-secondary order-3 !border-b border-transparent !border-b-black/50 bg-transparent py-2 outline-none transition-colors focus:!border-b-black disabled:cursor-not-allowed disabled:opacity-50"
     />
 
     <Show when={props.label}>
-      <TextField.Label class="order-2 -mb-4 origin-left translate-y-[25px] self-start text-white/50 transition-transform peer-not-placeholder-shown:translate-y-0 peer-not-placeholder-shown:scale-75 peer-focus:translate-y-0 peer-focus:scale-75">
+      <TextField.Label class="order-2 -mb-4 origin-left translate-y-[25px] self-start text-black/50 transition-transform peer-not-placeholder-shown:translate-y-0 peer-not-placeholder-shown:scale-75 peer-focus:translate-y-0 peer-focus:scale-75">
         {props.label}
       </TextField.Label>
     </Show>
