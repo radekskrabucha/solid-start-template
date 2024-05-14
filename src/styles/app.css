@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --default-font-family: var(--font-family-secondary);
+  --default-font-feature-settings: var(--font-family-secondary--font-feature-settings);
+  --default-font-variation-settings: var(--font-family-secondary--font-variation-settings);
   --font-family-main: "Montserrat", sans-serif;
   --font-family-secondary: "Barlow", sans-serif;
 
