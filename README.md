@@ -26,13 +26,19 @@ git clone git@github.com:radekskrabucha/solid-start-template.git
 npm install
 ```
 
-3. **Start the development server**: Run the following command to start the development server:
+3. **Copy env file**: Copy the `.env.example` file to `.env` and fill in the values.
+
+```bash
+cp .env.example .env
+```
+
+4. **Start the development server**: Run the following command to start the development server:
 
 ```bash
 npm run dev
 ```
 
-4. **Open the project in your browser**: Open your browser and navigate to `http://localhost:3000`. You should see the default SolidStart App Template in action.
+5. **Open the project in your browser**: Open your browser and navigate to `http://localhost:3000`. You should see the default SolidStart App Template in action.
 
 ## Scripts
 
