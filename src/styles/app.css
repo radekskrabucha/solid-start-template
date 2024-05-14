@@ -39,3 +39,47 @@
     transform: none;
   }
 }
+
+/* Toast animations */
+.toast[data-opened] {
+  animation: slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.toast[data-closed] {
+  animation: hide 100ms ease-in;
+}
+.toast[data-swipe="move"] {
+  transform: translateX(var(--kb-toast-swipe-move-x));
+}
+.toast[data-swipe="cancel"] {
+  transform: translateX(0);
+  transition: transform 200ms ease-out;
+}
+.toast[data-swipe="end"] {
+  animation: swipeOut 100ms ease-out;
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(calc(100% + var(--spacing-4)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes swipeOut {
+  from {
+    transform: translateX(var(--kb-toast-swipe-end-x));
+  }
+  to {
+    transform: translateX(calc(100% + var(--spacing-4)));
+  }
+}
+/* Toast animations end */
