@@ -1,3 +1,7 @@
+import {
+  Button as KobalteButton,
+  type ButtonRootProps
+} from '@kobalte/core/button'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type JSX, type Component } from 'solid-js'
 import { cn } from '~/utils/styles'
@@ -6,12 +10,13 @@ type ButtonElementProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>
 
 type ButtonProps = Pick<
   ButtonElementProps,
-  'class' | 'children' | 'onClick' | 'disabled' | 'type' | 'id'
+  'class' | 'children' | 'onClick' | 'id'
 > &
-  VariantProps<typeof buttonVariants>
+  VariantProps<typeof buttonVariants> &
+  ButtonRootProps
 
 export const Button: Component<ButtonProps> = props => (
-  <button
+  <KobalteButton
     {...props}
     type={props.type || 'button'}
     class={cn(
@@ -22,7 +27,7 @@ export const Button: Component<ButtonProps> = props => (
     )}
   >
     {props.children}
-  </button>
+  </KobalteButton>
 )
 
 export const buttonVariants = cva(
