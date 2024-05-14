@@ -10,7 +10,7 @@ type ErrorBoundaryProps = {
 
 export const ErrorBoundary: Component<ErrorBoundaryProps> = props => (
   <section class="layout-section flex-1 items-center justify-center gap-6 text-center">
-    <h1 class="text-3xl font-bold">Uh oh, something went sideways! ⚠️</h1>
+    <h2 class="text-3xl font-bold">Uh oh, something went sideways! 🚧</h2>
     <p class="text-lg">
       It appears an unexpected error has occurred. Don't worry, our engineers
       are already on it. ️
