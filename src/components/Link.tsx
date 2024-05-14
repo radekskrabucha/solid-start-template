@@ -1,49 +1,26 @@
-import { type JSX, Match, Switch, type Component } from 'solid-js'
+import { Link as KobalteLink, type LinkRootProps } from '@kobalte/core/link'
 import { A, type AnchorProps } from '@solidjs/router'
+import { type JSX, type Component } from 'solid-js'
 import { isExternalLink } from '~/utils/regexes'
 
-type LinkProps = InternalLinkProps | ExternalLinkProps | SpanProps
-
-export const Link: Component<LinkProps> = props => (
-  <Switch fallback={<A {...(props as AnchorProps)} />}>
-    <Match when={!props.href || props?.disabled}>
-      <span
-        aria-disabled="true"
-        {...(props as SpanProps)}
-      />
-    </Match>
-    <Match when={props.href && isExternalLink(props.href)}>
-      {/* @ts-ignore */}
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
-      />
-    </Match>
-  </Switch>
-)
-
-type InternalLinkProps = {
-  disabled?: false
+type ExternalLinkProps = {
+  href: string
 } & Pick<
-  AnchorProps,
+  JSX.AnchorHTMLAttributes<HTMLAnchorElement>,
   | 'class'
   | 'onClick'
   | 'onMouseEnter'
   | 'onTouchStart'
   | 'children'
   | 'id'
-  | 'href'
-  | 'activeClass'
-  | 'inactiveClass'
-  | 'replace'
-  | 'noScroll'
-  | 'state'
-  | 'end'
+  | 'target'
+  | 'rel'
   | 'aria-label'
->
+> &
+  Omit<LinkRootProps, 'href'>
 
-type ExternalLinkProps = {
+type InternalLinkProps = {
+  href: string
   disabled?: false
 } & Pick<
   JSX.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -53,22 +30,26 @@ type ExternalLinkProps = {
   | 'onTouchStart'
   | 'children'
   | 'id'
-  | 'href'
-  | 'target'
-  | 'rel'
   | 'aria-label'
->
+  | 'ref'
+> &
+  Pick<
+    AnchorProps,
+    'replace' | 'noScroll' | 'state' | 'end' | 'activeClass' | 'inactiveClass'
+  >
 
-type SpanProps = {
-  disabled?: true
-} & Pick<
-  JSX.AnchorHTMLAttributes<HTMLSpanElement>,
-  | 'class'
-  | 'onClick'
-  | 'onMouseEnter'
-  | 'onTouchStart'
-  | 'children'
-  | 'id'
-  | 'href'
-  | 'aria-label'
->
+type LinkProps = ExternalLinkProps | InternalLinkProps
+
+export const Link: Component<LinkProps> = props => {
+  if (isExternalLink(props.href) || props.disabled) {
+    return (
+      <KobalteLink
+        target="_blank"
+        rel="noopener noreferrer"
+        {...(props as ExternalLinkProps)}
+      />
+    )
+  }
+
+  return <A {...(props as InternalLinkProps)} />
+}

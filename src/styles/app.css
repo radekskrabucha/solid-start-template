@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --default-font-family: var(--font-family-secondary);
+  --default-font-feature-settings: var(--font-family-secondary--font-feature-settings);
+  --default-font-variation-settings: var(--font-family-secondary--font-variation-settings);
   --font-family-main: "Montserrat", sans-serif;
   --font-family-secondary: "Barlow", sans-serif;
 
@@ -24,4 +27,59 @@
   .layout-section {
     @apply flex w-full max-w-[1520px] flex-col self-center px-10 py-6 max-md:p-4
   }
+  .animate-show {
+    animation: show 350ms 50ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+  }
 }
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Toast animations */
+.toast[data-opened] {
+  animation: slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.toast[data-closed] {
+  animation: hide 100ms ease-in;
+}
+.toast[data-swipe="move"] {
+  transform: translateX(var(--kb-toast-swipe-move-x));
+}
+.toast[data-swipe="cancel"] {
+  transform: translateX(0);
+  transition: transform 200ms ease-out;
+}
+.toast[data-swipe="end"] {
+  animation: swipeOut 100ms ease-out;
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(calc(100% + var(--spacing-4)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes swipeOut {
+  from {
+    transform: translateX(var(--kb-toast-swipe-end-x));
+  }
+  to {
+    transform: translateX(calc(100% + var(--spacing-4)));
+  }
+}
+/* Toast animations end */

@@ -1,9 +1,9 @@
-import { SEO } from '~/components/Seo'
+import { SEOTitle } from '~/components/Seo'
 import { HomePage } from '~/features/home'
 
 const Home = () => (
   <>
-    <SEO title="Home" />
+    <SEOTitle title="Home" />
     <HomePage />
   </>
 )

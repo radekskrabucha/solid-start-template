@@ -13,12 +13,6 @@
     "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "importOrder": [
-    "^solid-js(.*)$",
-    "^@solidjs(.*)$",
-    "^~/(.*)$",
-    "^[./]",
-    "^[../]"
-  ],
+  "importOrder": ["^~/(.*)$", "^[./]", "^[../]"],
   "importOrderSeparation": false
 }

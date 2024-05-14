@@ -1,5 +1,5 @@
-import { Show, type Component } from 'solid-js'
 import { Meta, Title } from '@solidjs/meta'
+import { Show, type Component } from 'solid-js'
 import { AppName } from '~/config/app'
 import type { Undefinable } from '~/types/common'
 
@@ -52,7 +52,7 @@ export const SEO: Component<SeoProps> = props => (
 )
 
 type SEOTitleProps = {
-  title?: string
+  title: string
 }
 export const SEOTitle: Component<SEOTitleProps> = props => (
   <>
