@@ -11,6 +11,7 @@ import { defaultSeoTags } from '~/config/app'
 import { ErrorBoundary as ErrorBoundaryFallback } from './components/ErrorBoundary'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { SpriteIconsLink } from './components/SpriteIconsLink'
 
 type MainLayoutProps = {
   children: JSXElement
@@ -18,6 +19,7 @@ type MainLayoutProps = {
 
 export const MainLayout: Component<MainLayoutProps> = props => (
   <MetaProvider>
+    <SpriteIconsLink />
     <SEO
       title={undefined}
       description={defaultSeoTags.description}
