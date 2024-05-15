@@ -2,6 +2,23 @@ import { promises as fs } from 'fs'
 import path from 'path'
 
 export default function IconSpritePlugin() {
+  async function generateIconsHrefWithTimestamp() {
+    // Write layout/components/SpriteIconsLink.tsx
+    const timestamp = Math.floor(new Date().getTime() / 1000)
+    const spriteIconsLink = `import { Link } from '@solidjs/meta'\n\nexport const SpriteIconsLink = () => (\n  <Link\n    rel="preload"\n    as="image"\n    href="/icon-sprite.svg?timestamp=${timestamp}"\n  />\n)`
+
+    await fs.writeFile(
+      path.join(
+        process.cwd(),
+        'src',
+        'layout',
+        'components',
+        'SpriteIconsLink.tsx'
+      ),
+      spriteIconsLink
+    )
+  }
+
   async function generateIconSprite() {
     // Read the SVG files in the public/icons folder
     const iconsDir = path.join(process.cwd(), 'public', 'icons')
@@ -27,12 +44,23 @@ export default function IconSpritePlugin() {
 
     // Write the SVG sprite to a file in the public folder
     const sprite = `<svg width="0" height="0" style="display: none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n<defs>\n\n${symbols}\n</defs>\n</svg>`
+
+    // Check if the sprite has changed
+    const oldSprite = await fs.readFile(
+      path.join(process.cwd(), 'public', 'icon-sprite.svg'),
+      'utf8'
+    )
+    // Generate the sprite with new timestamp if it has changed
+    if (oldSprite !== sprite) {
+      await generateIconsHrefWithTimestamp()
+    }
+
     await fs.writeFile(
       path.join(process.cwd(), 'public', 'icon-sprite.svg'),
       sprite
     )
 
-    // Write the icons.ts
+    // Write the types/icons.ts
     const types = `export type IconId =\n${idTypes}`
 
     await fs.writeFile(
@@ -43,15 +71,15 @@ export default function IconSpritePlugin() {
 
   return {
     name: 'icon-sprite-plugin',
-    buildStart() {
+    async buildStart() {
       // Generate during build
-      return generateIconSprite()
+      return await generateIconSprite()
     },
     configureServer(server) {
       // Regenerate during development whenever an icon is added
       server.watcher.add(path.join(process.cwd(), 'public', 'icons', '*.svg'))
-      server.watcher.on('change', async changedPath => {
-        if (changedPath.endsWith('.svg')) return generateIconSprite()
+      server.watcher.on('add', async changedPath => {
+        if (changedPath.endsWith('.svg')) return await generateIconSprite()
       })
     }
   }
