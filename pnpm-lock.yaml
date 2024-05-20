@@ -14,8 +14,8 @@ importers:
         specifier: 0.20.0
         version: 0.20.0(solid-js@1.8.17)
       '@solidjs/meta':
-        specifier: 0.29.3
-        version: 0.29.3(solid-js@1.8.17)
+        specifier: 0.29.4
+        version: 0.29.4(solid-js@1.8.17)
       '@solidjs/router':
         specifier: 0.13.3
         version: 0.13.3(solid-js@1.8.17)
@@ -23,11 +23,11 @@ importers:
         specifier: 1.0.0-rc.1
         version: 1.0.0-rc.1(rollup@4.17.2)(solid-js@1.8.17)(vinxi@0.3.11(@opentelemetry/api@1.8.0)(@types/node@20.12.12)(ioredis@5.4.1)(lightningcss@1.24.1)(terser@5.31.0))(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0))
       '@tanstack/solid-query':
-        specifier: 5.36.0
-        version: 5.36.0(solid-js@1.8.17)
+        specifier: 5.37.1
+        version: 5.37.1(solid-js@1.8.17)
       axios:
-        specifier: 1.6.8
-        version: 1.6.8
+        specifier: 1.7.1
+        version: 1.7.1
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -1658,10 +1658,10 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solidjs/meta@0.29.3':
+  '@solidjs/meta@0.29.4':
     resolution:
       {
-        integrity: sha512-R2uirgjgyh3FPFh+rb840plF701N6GvM5w81/QeI61QwjXb4QzLkyI/uzXfC5UW8favpUn9KK9ILQeoTl6pX0A==
+        integrity: sha512-zdIWBGpR9zGx1p1bzIPqF5Gs+Ks/BH8R6fWhmUa/dcK1L2rUC8BAcZJzNRYBQv74kScf1TSOs0EY//Vd/I0V8g==
       }
     peerDependencies:
       solid-js: '>=1.8.4'
@@ -1791,16 +1791,16 @@ packages:
     peerDependencies:
       vite: ^5.2.0
 
-  '@tanstack/query-core@5.36.0':
+  '@tanstack/query-core@5.36.1':
     resolution:
       {
-        integrity: sha512-B5BD3pg/mztDR36i77hGcyySKKeYrbM5mnogOROTBi1SUml5ByRK7PGUUl16vvubvQC+mSnqziFG/VIy/DE3FQ==
+        integrity: sha512-BteWYEPUcucEu3NBcDAgKuI4U25R9aPrHSP6YSf2NvaD2pSlIQTdqOfLRsxH9WdRYg7k0Uom35Uacb6nvbIMJg==
       }
 
-  '@tanstack/solid-query@5.36.0':
+  '@tanstack/solid-query@5.37.1':
     resolution:
       {
-        integrity: sha512-vzOj0N1h3f15tp5WCbGdnfwNO8+QTELLZdsRR9m95LMDWMxVprWYknntk2KZelz34Ax5uNEfM582Hhrs2XlaCA==
+        integrity: sha512-XLIwvIFaFNhSl+ldeT+CxHYBjLnXcevzQmnjae/6KD8qX8CfEuSCnYxmDDtfW+diDtavi7G9ZROMwoc/IyAlEQ==
       }
     peerDependencies:
       solid-js: ^1.6.0
@@ -2141,10 +2141,10 @@ packages:
       }
     engines: { node: '>= 4.0.0' }
 
-  axios@1.6.8:
+  axios@1.7.1:
     resolution:
       {
-        integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==
+        integrity: sha512-+LV37nQcd1EpFalkXksWNBiA17NZ5m5/WspmHGmZmdx1qBOg/VNq/c4eRJiA9VQQHBOs+N0ZhhdU10h2TyNK7Q==
       }
 
   b4a@1.6.6:
@@ -6962,7 +6962,7 @@ snapshots:
     dependencies:
       solid-js: 1.8.17
 
-  '@solidjs/meta@0.29.3(solid-js@1.8.17)':
+  '@solidjs/meta@0.29.4(solid-js@1.8.17)':
     dependencies:
       solid-js: 1.8.17
 
@@ -7050,11 +7050,11 @@ snapshots:
       tailwindcss: 4.0.0-alpha.15
       vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.24.1)(terser@5.31.0)
 
-  '@tanstack/query-core@5.36.0': {}
+  '@tanstack/query-core@5.36.1': {}
 
-  '@tanstack/solid-query@5.36.0(solid-js@1.8.17)':
+  '@tanstack/solid-query@5.37.1(solid-js@1.8.17)':
     dependencies:
-      '@tanstack/query-core': 5.36.0
+      '@tanstack/query-core': 5.36.1
       solid-js: 1.8.17
 
   '@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.2.5)':
@@ -7305,7 +7305,7 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  axios@1.6.8:
+  axios@1.7.1:
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
