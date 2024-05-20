@@ -160,7 +160,7 @@ const writeIconsTypes = async (idTypes: string) => {
 }
 const writeGetIconHrefUtils = async (timestamp: number, prefix: string) => {
   // Write src/utils/icon.ts
-  const file = `import type { IconId } from '~/types/icons'\n\n\nexport const getIconHref = (id: IconId) => \`/${prefix}-${timestamp}.svg#\${id}\`\n`
+  const file = `import type { IconId } from '~/types/icons'\n\nexport const getIconHref = (id: IconId) => \`/${prefix}-${timestamp}.svg#\${id}\`\n`
 
   await fs.writeFile(path.join(process.cwd(), 'src', 'utils', 'icons.ts'), file)
 }
