@@ -2,8 +2,15 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import type { Plugin } from 'vinxi'
 
-export const IconSpritePlugin = (): Plugin => {
-  const iconsDir = path.join(process.cwd(), 'public', 'icons')
+type SpriteIconsPluginConfig = {
+  prefix?: string
+}
+
+export const IconSpritePlugin = ({
+  prefix = 'icon-sprite'
+}: SpriteIconsPluginConfig = {}): Plugin => {
+  const spriteIconsDir = path.join(process.cwd(), 'public')
+  const iconsDir = path.join(spriteIconsDir, 'icons')
 
   return {
     name: 'icon-sprite-plugin',
@@ -12,31 +19,77 @@ export const IconSpritePlugin = (): Plugin => {
 
       iconsWatcher.on('change', async path => {
         if (path.startsWith(iconsDir)) {
-          await generateIconSprite(iconsDir)
+          await generateIconSprite(iconsDir, spriteIconsDir, prefix)
         }
       })
     },
     buildStart: async () => {
-      await generateIconSprite(iconsDir)
+      await generateIconSprite(iconsDir, spriteIconsDir, prefix)
     }
   }
 }
 
-const generateIconSprite = async (iconsDir: string) => {
+const generateIconSprite = async (
+  iconsDir: string,
+  spriteIconsDir: string,
+  prefix: string
+) => {
   const timestamp = Math.floor(new Date().getTime() / 1000)
-  const files = await getSvgFiles(iconsDir)
+  const svgIconsFiles = await getSvgFiles(iconsDir)
 
-  const { sprite, idTypes } = await buildUpSvgSprite(files, iconsDir)
+  const { sprite, idTypes } = await buildUpSvgSprite(svgIconsFiles, iconsDir)
 
-  await writeSpriteIconsLinkWithTimestamp(timestamp)
-  await writeIconsSprite(sprite, timestamp)
-  await writeIconsTypes(idTypes)
+  const spriteIconFiles = await getSvgSpriteFiles(spriteIconsDir, prefix)
+  const oldSprite = await getSvgSpriteFileContent(
+    spriteIconsDir,
+    spriteIconFiles[0]
+  )
+
+  if (oldSprite !== sprite) {
+    await removeOldSpriteIcons(spriteIconsDir, spriteIconFiles)
+    await writeSpriteIconsLinkWithTimestamp(timestamp, prefix)
+    await writeIconsSprite(sprite, timestamp, prefix, spriteIconsDir)
+    await writeIconsTypes(idTypes)
+  }
 }
 
 const getSvgFiles = async (iconsDir: string) => {
-  const files = await fs.readdir(iconsDir)
+  const files = (await fs.readdir(iconsDir)).filter(file =>
+    file.endsWith('.svg')
+  )
 
   return files
+}
+
+const getSvgSpriteFiles = async (spriteIconsDir: string, prefix: string) => {
+  const files = (await fs.readdir(spriteIconsDir)).filter(
+    file => file.endsWith('.svg') && file.startsWith(prefix)
+  )
+
+  return files
+}
+const getSvgSpriteFileContent = async (
+  spriteIconsDir: string,
+  svgSpriteFile: string | undefined
+) => {
+  if (svgSpriteFile) {
+    const svgContent = await fs.readFile(
+      path.join(spriteIconsDir, svgSpriteFile),
+      'utf8'
+    )
+
+    return svgContent
+  }
+}
+const removeOldSpriteIcons = async (
+  spriteIconsDir: string,
+  spriteIconFiles: Array<string>
+) => {
+  for (const file of spriteIconFiles) {
+    // wait 200ms to avoid race condition
+    await new Promise(resolve => setTimeout(resolve, 200))
+    await fs.unlink(path.join(spriteIconsDir, file)).catch(error => {})
+  }
 }
 
 const buildUpSvgSprite = async (files: Array<string>, iconsDir: string) => {
@@ -63,10 +116,12 @@ const buildUpSvgSprite = async (files: Array<string>, iconsDir: string) => {
   }
 }
 
-const writeSpriteIconsLinkWithTimestamp = async (timestamp: number) => {
+const writeSpriteIconsLinkWithTimestamp = async (
+  timestamp: number,
+  prefix: string
+) => {
   // Write layout/components/SpriteIconsLink.tsx
-  // const spriteIconsLink = `import { Link } from '@solidjs/meta'\n\nexport const SpriteIconsLink = () => (\n  <Link\n    rel="preload"\n    as="image"\n    href="/icon-sprite-${timestamp}.svg"\n  />\n\n)`
-  const spriteIconsLink = `import { Link } from '@solidjs/meta'\n\nexport const SpriteIconsLink = () => (\n  <Link\n    rel="preload"\n    as="image"\n    href="/icon-sprite.svg"\n  />\n\n)`
+  const spriteIconsLink = `import { Link } from '@solidjs/meta'\n\nexport const SpriteIconsLink = () => (\n  <Link\n    rel="preload"\n    as="image"\n    href="/${prefix}-${timestamp}.svg"\n  />\n)\n`
 
   await fs.writeFile(
     path.join(
@@ -80,11 +135,15 @@ const writeSpriteIconsLinkWithTimestamp = async (timestamp: number) => {
   )
 }
 
-const writeIconsSprite = async (sprite: string, timestamp: number) => {
+const writeIconsSprite = async (
+  sprite: string,
+  timestamp: number,
+  prefix: string,
+  spriteIconsDir: string
+) => {
   // Write the SVG sprite to a file in the public folder
   await fs.writeFile(
-    // path.join(process.cwd(), 'public', `icon-sprite-${timestamp}.svg`),
-    path.join(process.cwd(), 'public', `icon-sprite.svg`),
+    path.join(spriteIconsDir, `${prefix}-${timestamp}.svg`),
     sprite
   )
 }
