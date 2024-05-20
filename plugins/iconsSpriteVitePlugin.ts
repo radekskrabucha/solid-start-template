@@ -6,7 +6,7 @@ type SpriteIconsPluginConfig = {
   prefix?: string
 }
 
-export const IconSpritePlugin = ({
+const IconSpritePlugin = ({
   prefix = 'icon-sprite'
 }: SpriteIconsPluginConfig = {}): Plugin => {
   const spriteIconsDir = path.join(process.cwd(), 'public')
@@ -157,3 +157,5 @@ const writeIconsTypes = async (idTypes: string) => {
     types
   )
 }
+
+export default IconSpritePlugin
