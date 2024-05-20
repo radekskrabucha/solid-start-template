@@ -15,7 +15,7 @@
     "@solidjs/meta": "0.29.3",
     "@solidjs/router": "0.13.3",
     "@solidjs/start": "1.0.0-rc.1",
-    "@tanstack/solid-query": "5.36.0",
+    "@tanstack/solid-query": "5.37.1",
     "axios": "1.6.8",
     "class-variance-authority": "0.7.0",
     "solid-js": "1.8.17",
