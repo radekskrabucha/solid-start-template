@@ -32,9 +32,7 @@ export const Footer: Component = () => (
         </div>
       </div>
       <div class="border-t border-white/10 pt-4">
-        <p class="text-sm text-white/20">
-          © {getCurrentYear()} Radek Skrabucha
-        </p>
+        <p class="text-sm text-white/20">{getCurrentYear()} Radek Skrabucha</p>
       </div>
     </div>
   </footer>

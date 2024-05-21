@@ -28,7 +28,7 @@ git clone git@github.com:radekskrabucha/solid-start-template.git
 2. **Install dependencies**: Navigate to the project directory and run the following command to install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 3. **Copy env file**: Copy the `.env.example` file to `.env` and fill in the values.
@@ -40,7 +40,7 @@ cp .env.example .env
 4. **Start the development server**: Run the following command to start the development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 5. **Open the project in your browser**: Open your browser and navigate to `http://localhost:3000`. You should see the default SolidStart App Template in action.
@@ -49,15 +49,15 @@ npm run dev
 
 This template comes with a few useful scripts that can help you manage your SolidJS project:
 
-- `npm run dev`: Starts the development server and opens your project in your default browser.
-- `npm run build`: Builds your project for production.
-- `npm run start`: Starts the production server.
-- `npm run format`: Formats your code using Prettier.
-- `npm run commit`: Runs the commitlint tool to check for any errors or warnings.
+- `pnpm dev`: Starts the development server and opens your project in your default browser.
+- `pnpm build`: Builds your project for production.
+- `pnpm start`: Starts the production server.
+- `pnpm format`: Formats your code using Prettier.
+- `pnpm commit`: Runs the commitlint tool to check for any errors or warnings.
 
 ## Deployment
 
-Visit the [SolidStart documentation](https://docs.solidjs.com/guides/deploying-your-app#deploying-your-app) for more information on how to deploy your SolidStart App Template.
+Visit the [SolidStart documentation](https://docs.solidjs.com/guides/deploying-your-app#deploying-your-app) for more information on how to deploy your SolidStart App Template. Currently, this template is configured to deploy to Vercel. If you want to deploy to another platform, you will need to modify the app.config.ts file to include the necessary configuration for your platform.
 
 ## Contributing
 
