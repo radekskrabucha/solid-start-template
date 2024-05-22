@@ -18,6 +18,7 @@ export function QueryBoundary<T>(props: QueryBoundaryProps<T>) {
       <ErrorBoundary
         fallback={(error: Error, reset) =>
           props.errorFallback ? (
+            // eslint-disable-next-line solid/reactivity
             props.errorFallback(error, async () => {
               await props.query.refetch()
               reset()
@@ -25,9 +26,8 @@ export function QueryBoundary<T>(props: QueryBoundaryProps<T>) {
           ) : (
             <DefaultErrorFallback
               error={error}
-              retry={async () => {
-                await props.query.refetch()
-                reset()
+              retry={() => {
+                props.query.refetch().finally(() => reset())
               }}
               errorUpdateCount={props.query.errorUpdateCount}
               isRefetching={props.query.isFetching}

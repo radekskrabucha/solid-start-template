@@ -2,7 +2,11 @@ import { useSearchParams, type NavigateOptions } from '@solidjs/router'
 import { createSignal } from 'solid-js'
 import type { ZodType, z } from 'zod'
 
-export const useValidatedSearchParams = <T extends ZodType<{}>>(schema: T) => {
+export const useValidatedSearchParams = <
+  T extends ZodType<Record<string, never>>
+>(
+  schema: T
+) => {
   const [rawParams, setParams] = useSearchParams<z.infer<T>>()
   const [params, setSignalParams] = createSignal<z.infer<T>>(
     schema.parse(rawParams)
