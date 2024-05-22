@@ -1,6 +1,6 @@
 import { Link as KobalteLink, type LinkRootProps } from '@kobalte/core/link'
 import { A, type AnchorProps } from '@solidjs/router'
-import { type JSX, type Component } from 'solid-js'
+import { type JSX, type Component, Show } from 'solid-js'
 import { isExternalLink } from '~/utils/regexes'
 
 type ExternalLinkProps = {
@@ -40,16 +40,15 @@ type InternalLinkProps = {
 
 type LinkProps = ExternalLinkProps | InternalLinkProps
 
-export const Link: Component<LinkProps> = props => {
-  if (isExternalLink(props.href) || props.disabled) {
-    return (
-      <KobalteLink
-        target="_blank"
-        rel="noopener noreferrer"
-        {...(props as ExternalLinkProps)}
-      />
-    )
-  }
-
-  return <A {...(props as InternalLinkProps)} />
-}
+export const Link: Component<LinkProps> = props => (
+  <Show
+    when={isExternalLink(props.href) || props.disabled}
+    fallback={<A {...(props as InternalLinkProps)} />}
+  >
+    <KobalteLink
+      target="_blank"
+      rel="noopener noreferrer"
+      {...(props as ExternalLinkProps)}
+    />
+  </Show>
+)

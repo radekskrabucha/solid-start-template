@@ -38,19 +38,15 @@ export const request = async <TReq, TRes>(
   params: RequestParams<TReq>,
   mockParams?: MockParams<TRes>
 ): Promise<TRes> => {
-  try {
-    if (mockParams) {
-      return await fetchMockData(mockParams)
-    }
-
-    const apiClient = API_CLIENTS[params.axiosClient]
-
-    const response = await axiosFetch<TReq, TRes>(params, apiClient)
-
-    return response.data
-  } catch (error) {
-    throw error
+  if (mockParams) {
+    return await fetchMockData(mockParams)
   }
+
+  const apiClient = API_CLIENTS[params.axiosClient]
+
+  const response = await axiosFetch<TReq, TRes>(params, apiClient)
+
+  return response.data
 }
 
 export const fetchMockData = <T>({

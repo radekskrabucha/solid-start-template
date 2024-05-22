@@ -48,7 +48,7 @@ export const TextInput: Component<TextInputProps> = props => (
       onChange={props.onChange}
       onBlur={props.onBlur}
       onFocus={props.onFocus}
-      // @ts-ignore
+      // @ts-expect-error incompatible types
       onInput={props.onInput}
       placeholder={props.placeholder}
       type={props.type}
