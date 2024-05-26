@@ -14,6 +14,7 @@ This is a starter template for SolidStart projects. It includes a basic layout a
 - **Kobalte**: A UI toolkit for building accessible web apps and design systems with SolidJS.
 - **Modular Forms**: A library for building forms in SolidJS applications.
 - **Env Validation**: Validating environment variables with the help of the `@julr/vite-plugin-validate-env` plugin.
+- **Vitest**: A testing framework for SolidJS applications.
 
 ## Getting Started
 
@@ -52,7 +53,11 @@ This template comes with a few useful scripts that can help you manage your Soli
 - `pnpm dev`: Starts the development server and opens your project in your default browser.
 - `pnpm build`: Builds your project for production.
 - `pnpm start`: Starts the production server.
+- `pnpm test`: Runs the vitest tool to test your project.
+- `pnpm lint`: Runs the ESLint tool to check for any errors or warnings.
+- `pnpm lint:fix`: Runs the ESLint tool to automatically fix any errors or warnings.
 - `pnpm format`: Formats your code using Prettier.
+- `pnpm type-check`: Runs the TypeScript compiler to check for any type errors.
 - `pnpm commit`: Runs the commitlint tool to check for any errors or warnings.
 
 ## Deployment
