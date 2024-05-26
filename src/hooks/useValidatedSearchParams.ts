@@ -3,7 +3,7 @@ import { createSignal } from 'solid-js'
 import type { ZodType, z } from 'zod'
 
 export const useValidatedSearchParams = <
-  T extends ZodType<Record<string, never>>
+  T extends ZodType<NonNullable<unknown>>
 >(
   schema: T
 ) => {
