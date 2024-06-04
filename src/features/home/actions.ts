@@ -10,7 +10,7 @@ type PostContactMessageRes = InferResponseType<typeof client.message.$post>
 export const postContactMessage = (req: PostContactMessageReq) => {
   return request<PostContactMessageReq, PostContactMessageRes>({
     method: 'post',
-    url: 'http://localhost:3000/api/message',
+    url: '/api/message',
     req,
     axiosClient: 'basic'
   })
