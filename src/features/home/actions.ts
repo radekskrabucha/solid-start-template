@@ -8,6 +8,7 @@ type PostContactMessageReq = InferRequestType<
 type PostContactMessageRes = InferResponseType<typeof client.message.$post>
 
 export const postContactMessage = (req: PostContactMessageReq) => {
+  'use server'
   return request<PostContactMessageReq, PostContactMessageRes>({
     method: 'post',
     url: '/api/message',
