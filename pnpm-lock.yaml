@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      '@hono/zod-validator':
+        specifier: 0.2.2
+        version: 0.2.2(hono@4.4.3)(zod@3.23.8)
       '@kobalte/core':
         specifier: 0.13.2
         version: 0.13.2(solid-js@1.8.17)
@@ -31,6 +34,9 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      hono:
+        specifier: 4.4.3
+        version: 4.4.3
       solid-js:
         specifier: 1.8.17
         version: 1.8.17
@@ -977,6 +983,15 @@ packages:
       {
         integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==
       }
+
+  '@hono/zod-validator@0.2.2':
+    resolution:
+      {
+        integrity: sha512-dSDxaPV70Py8wuIU2QNpoVEIOSzSXZ/6/B/h4xA7eOMz7+AarKTSGV8E6QwrdcCbBLkpqfJ4Q2TmBO0eP1tCBQ==
+      }
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution:
@@ -4088,6 +4103,13 @@ packages:
         integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==
       }
     engines: { node: '>=0.10.0' }
+
+  hono@4.4.3:
+    resolution:
+      {
+        integrity: sha512-G7rTruKzrHXPz1KB4B50deKydPA9+aeei+WC1hikP0abN9N+a6yORuweageaqWocYfYNkpoqA5ezGV2mzQasvw==
+      }
+    engines: { node: '>=16.0.0' }
 
   hookable@5.5.3:
     resolution:
@@ -7742,6 +7764,11 @@ snapshots:
 
   '@floating-ui/utils@0.2.2': {}
 
+  '@hono/zod-validator@0.2.2(hono@4.4.3)(zod@3.23.8)':
+    dependencies:
+      hono: 4.4.3
+      zod: 3.23.8
+
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.3.0': {}
@@ -9752,6 +9779,8 @@ snapshots:
   homedir-polyfill@1.0.3:
     dependencies:
       parse-passwd: 1.0.0
+
+  hono@4.4.3: {}
 
   hookable@5.5.3: {}
 
