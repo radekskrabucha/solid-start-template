@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@kobalte/core": "0.13.2",
-    "@modular-forms/solid": "0.20.0",
+    "@modular-forms/solid": "0.21.0",
     "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.13.5",
     "@solidjs/start": "1.0.1",
