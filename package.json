@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@kobalte/core": "0.13.2",
+    "@kobalte/core": "0.13.3",
     "@modular-forms/solid": "0.20.0",
     "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.13.5",
