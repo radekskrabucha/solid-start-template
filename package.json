@@ -24,7 +24,7 @@
     "class-variance-authority": "0.7.0",
     "solid-js": "1.8.17",
     "tailwind-merge": "2.3.0",
-    "vinxi": "0.3.11",
+    "vinxi": "0.3.12",
     "zod": "3.23.8"
   },
   "devDependencies": {
