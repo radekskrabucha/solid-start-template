@@ -23,7 +23,7 @@
     "axios": "1.7.2",
     "class-variance-authority": "0.7.0",
     "solid-js": "1.8.18",
-    "tailwind-merge": "2.3.0",
+    "tailwind-merge": "2.4.0",
     "vinxi": "0.3.12",
     "zod": "3.23.8"
   },
