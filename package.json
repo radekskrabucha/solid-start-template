@@ -18,13 +18,13 @@
     "@modular-forms/solid": "0.22.1",
     "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.14.1",
-    "@solidjs/start": "1.0.4",
-    "@tanstack/solid-query": "5.51.2",
+    "@solidjs/start": "1.0.6",
+    "@tanstack/solid-query": "5.51.9",
     "axios": "1.7.2",
     "class-variance-authority": "0.7.0",
     "solid-js": "1.8.18",
     "tailwind-merge": "2.4.0",
-    "vinxi": "0.3.14",
+    "vinxi": "0.4.1",
     "zod": "3.23.8"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@commitlint/config-conventional": "19.2.2",
     "@eslint/js": "9.7.0",
     "@julr/vite-plugin-validate-env": "1.1.1",
-    "@solidjs/testing-library": "0.8.8",
+    "@solidjs/testing-library": "0.8.9",
     "@tailwindcss/vite": "4.0.0-alpha.17",
     "@testing-library/jest-dom": "6.4.6",
     "@testing-library/user-event": "14.5.2",
@@ -43,8 +43,8 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-solid": "0.14.1",
     "globals": "15.8.0",
-    "husky": "9.0.11",
-    "jsdom": "24.1.0",
+    "husky": "9.1.1",
+    "jsdom": "24.1.1",
     "lint-staged": "15.2.7",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.5",
@@ -52,7 +52,7 @@
     "typescript": "5.5.3",
     "typescript-eslint": "7.16.1",
     "vite-plugin-solid": "2.10.2",
-    "vitest": "2.0.3"
+    "vitest": "2.0.4"
   },
   "engines": {
     "node": ">=20"
