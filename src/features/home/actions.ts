@@ -1,19 +1,13 @@
-import { request } from '~/lib/axios'
+import { mockFetch } from '~/lib/fetch'
 import type { ContactForm } from './form/contactForm'
 
 export const postContactMessage = (req: ContactForm) => {
   'use server'
-  return request<ContactForm, undefined>(
-    {
-      method: 'post',
-      url: 'https://your-api-endpoint.com/example',
-      req,
-      axiosClient: 'basic'
+  return mockFetch<typeof req, { status: string }>({
+    mockData: {
+      status: 'test'
     },
-    {
-      timeout: 2000,
-      mockData: undefined,
-      shouldReject: false
-    }
-  )
+    shouldReject: false,
+    timeout: 2000
+  })
 }

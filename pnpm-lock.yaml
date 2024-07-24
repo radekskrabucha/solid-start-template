@@ -25,12 +25,12 @@ importers:
       '@tanstack/solid-query':
         specifier: 5.51.9
         version: 5.51.9(solid-js@1.8.18)
-      axios:
-        specifier: 1.7.2
-        version: 1.7.2
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      ky:
+        specifier: 1.4.0
+        version: 1.4.0
       solid-js:
         specifier: 1.8.18
         version: 1.8.18
@@ -2289,12 +2289,6 @@ packages:
       }
     engines: { node: '>= 4.0.0' }
 
-  axios@1.7.2:
-    resolution:
-      {
-        integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==
-      }
-
   b4a@1.6.6:
     resolution:
       {
@@ -4457,6 +4451,13 @@ packages:
         integrity: sha512-VSWXYUnsPu9+WYKkfmJyLKtIvaRJi1kXUqVmBACORXZQxT5oZDsoZ2vQP+bQFDnWtpI/4eq3MLoRMjI2fnLzTQ==
       }
 
+  ky@1.4.0:
+    resolution:
+      {
+        integrity: sha512-tPhhoGUiEiU/WXR4rt8klIoLdnTtyu+9jVKHd/wauEjYud32jyn63mzKWQweaQrHWxBQtYoVtdcEnYX1LosnFQ==
+      }
+    engines: { node: '>=18' }
+
   lazystream@1.0.1:
     resolution:
       {
@@ -5479,12 +5480,6 @@ packages:
         integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
       }
     engines: { node: '>= 0.6.0' }
-
-  proxy-from-env@1.1.0:
-    resolution:
-      {
-        integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
-      }
 
   psl@1.9.0:
     resolution:
@@ -8468,14 +8463,6 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  axios@1.7.2:
-    dependencies:
-      follow-redirects: 1.15.6
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-
   b4a@1.6.6: {}
 
   babel-plugin-jsx-dom-expressions@0.37.20(@babel/core@7.24.5):
@@ -9719,6 +9706,8 @@ snapshots:
 
   known-css-properties@0.30.0: {}
 
+  ky@1.4.0: {}
+
   lazystream@1.0.1:
     dependencies:
       readable-stream: 2.3.8
@@ -10307,8 +10296,6 @@ snapshots:
   process-nextick-args@2.0.1: {}
 
   process@0.11.10: {}
-
-  proxy-from-env@1.1.0: {}
 
   psl@1.9.0: {}
 
