@@ -19,7 +19,7 @@
     "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.14.1",
     "@solidjs/start": "1.0.6",
-    "@tanstack/solid-query": "5.51.9",
+    "@tanstack/solid-query": "5.51.15",
     "class-variance-authority": "0.7.0",
     "ky": "1.4.0",
     "solid-js": "1.8.18",
