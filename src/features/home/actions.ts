@@ -8,6 +8,7 @@ export const postContactMessage = (req: ContactForm) => {
       status: 'test'
     },
     shouldReject: false,
-    timeout: 2000
+    timeout: 2000,
+    req
   })
 }
