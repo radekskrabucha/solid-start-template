@@ -5,4 +5,4 @@ type ImportMetaEnvAugmented =
     typeof import('../env').default
   >
 
-interface ImportMetaEnv extends ImportMetaEnvAugmented {}
+type ImportMetaEnv = ImportMetaEnvAugmented
