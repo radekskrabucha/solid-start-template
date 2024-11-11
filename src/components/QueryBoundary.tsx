@@ -70,7 +70,7 @@ type DefaultErrorFallbackProps = {
 }
 
 const DefaultErrorFallback: Component<DefaultErrorFallbackProps> = props => (
-  <div class="flex flex-1 flex-col items-center justify-center gap-6 text-balance text-center">
+  <div class="flex flex-1 flex-col items-center justify-center gap-6 text-center text-balance">
     <h2 class="text-3xl font-bold">Oopss... we've got an error! 🚧</h2>
     <Show
       when={props.errorUpdateCount < 4}
@@ -104,7 +104,7 @@ const DefaultErrorFallback: Component<DefaultErrorFallbackProps> = props => (
 )
 
 const DefaultNotFoundFallback: Component = () => (
-  <div class="flex flex-1 flex-col items-center justify-center gap-6 text-balance text-center">
+  <div class="flex flex-1 flex-col items-center justify-center gap-6 text-center text-balance">
     <h2 class="text-3xl font-bold">Upsss... not found 🤔</h2>
     <p class="text-white/50">
       Seems like there is nothing here yet.🤷
