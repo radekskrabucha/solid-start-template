@@ -32,7 +32,7 @@ const ToastA: Component<ToastProps> = props => {
       <div class="flex justify-between gap-2">
         <Toast.Title
           as="h3"
-          class="line-clamp-2 text-lg font-medium uppercase tracking-wider text-white"
+          class="line-clamp-2 text-lg font-medium tracking-wider text-white uppercase"
         >
           {localProps.title}
         </Toast.Title>
