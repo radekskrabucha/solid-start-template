@@ -55,7 +55,7 @@ export const TextAreaInput: Component<TextAreaInputProps> = props => (
       autoResize={props.autoResize}
       submitOnEnter={props.submitOnEnter}
       autofocus={props.autofocus}
-      class="peer data-[invalid]:!border-b-error font-secondary order-3 !border-b border-transparent !border-b-black/50 bg-transparent py-2 outline-none transition-colors focus:!border-b-black disabled:cursor-not-allowed disabled:opacity-50"
+      class="peer data-[invalid]:!border-b-error font-secondary order-3 !border-b border-transparent !border-b-black/50 bg-transparent py-2 transition-colors outline-none focus:!border-b-black disabled:cursor-not-allowed disabled:opacity-50"
     />
 
     <Show when={props.label}>
