@@ -45,7 +45,7 @@
     "globals": "15.14.0",
     "husky": "9.1.7",
     "jsdom": "26.0.0",
-    "lint-staged": "15.3.0",
+    "lint-staged": "15.4.1",
     "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "0.6.9",
     "tailwindcss": "4.0.0-beta.9",
