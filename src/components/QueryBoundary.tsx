@@ -1,11 +1,11 @@
-import type { CreateQueryResult } from '@tanstack/solid-query'
+import type { UseQueryResult } from '@tanstack/solid-query'
 import type { Component, JSXElement } from 'solid-js'
 import { ErrorBoundary, Match, Show, Suspense, Switch } from 'solid-js'
 import { Button } from './Button'
 import { LoaderCircle } from './LoaderCircle'
 
 export interface QueryBoundaryProps<T = unknown> {
-  query: CreateQueryResult<T, Error | unknown>
+  query: UseQueryResult<T, Error | unknown>
   loadingFallback?: JSXElement
   notFoundFallback?: JSXElement
   errorFallback?: (err: Error, retry: () => void) => JSXElement
